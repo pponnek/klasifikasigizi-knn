@@ -21,8 +21,10 @@ def create_app(config_class=Config):
     CORS(app)
 
     from app.routes.authRoutes import auth_bp
+    from app.routes.userRoutes import user_bp
 
     app.register_blueprint(auth_bp, url_prefix='/auth')
+    app.register_blueprint(user_bp, url_prefix='/user')
 
     logging.basicConfig(level=logging.INFO)
     logging.info('App started')

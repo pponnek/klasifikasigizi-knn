@@ -22,7 +22,7 @@ def create_app(config_class=Config):
 
     from app.routes.authRoutes import auth_bp
 
-    app.register_blueprint(auth_bp, url_prefix='')
+    app.register_blueprint(auth_bp, url_prefix='/auth')
 
     logging.basicConfig(level=logging.INFO)
     logging.info('App started')
